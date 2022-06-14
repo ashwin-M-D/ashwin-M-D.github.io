@@ -29,11 +29,11 @@
 		
 		
 		//Place your Email Here
-		$recipient = "your_email@domain.com";
+		$recipient = "ashwindevanga@live.com";
 		
 		$mailheader = "From: $email \r\n";
 		
-		if( mail($recipient, $name, $formcontent, $mailheader) == false ){
+		if( mail($recipient, "From ashwindevanga.com, by $name" , $formcontent, $mailheader) == false ){
 			$data['error'] = 'Sorry, an error occured!';
 		}else{
 			$data['error'] = false;
