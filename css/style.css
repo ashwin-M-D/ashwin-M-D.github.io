@@ -438,13 +438,13 @@ body.section-show .transition-mask:before{
 
 .front-section{
 	padding-top:0px;
-	padding-bottom:200px;
+	padding-bottom:140px;
 	position:relative;
 	background-color:darkslategray;
 }
 .front-heading{
 	text-align:center;
-	margin-top:110px;
+	margin-top:200px;
 }
 .front-heading > h2{
 	font-size:55px;
