@@ -4,135 +4,276 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
     <title>Ashwin Devanga</title>
 
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="bootstrap/css/bootstrap.min.css"
-    />
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/ionicons.min.css" />
-
     <link rel="stylesheet" type="text/css" href="css/owl.carousel.css" />
     <link rel="stylesheet" type="text/css" href="css/owl.theme.css" />
     <link rel="stylesheet" type="text/css" href="css/owl.transitions.css" />
     <link rel="stylesheet" type="text/css" href="css/magnific-popup.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="css/color-default.css" />
+
+    <style>
+      /* --- 1. GLOBAL RESET --- */
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* Front section fills screen and centers content */
+      .front-section {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 !important;
+        overflow: hidden; 
+      }
+
+      .front-section .container {
+        padding-top: 0 !important;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* --- 2. SPACING & VISIBILITY FIXES --- */
+      
+      .basic-info { 
+        padding-bottom: 0 !important; /* Remove bottom gap from About Me */
+      }
+      
+      /* FIX: Force Dark Background & Text Color so it's visible */
+      .funfacts-block { 
+        padding-top: 15px !important;    
+        padding-bottom: 15px !important; 
+        margin-top: 20px !important;     
+        margin-bottom: 20px !important;
+        background-color: #333 !important; /* Dark Grey Background */
+        background-image: none !important; /* Disable potential broken image */
+      }
+
+      /* Ensure the text is White */
+      .funfact h4, .funfact p {
+        color: #fff !important;
+      }
+      
+      .testimonials-block { 
+        padding-top: 0 !important; 
+      }
+      
+      .testimonials-block .section-header {
+        margin-bottom: 30px !important; 
+      }
+
+      /* --- 3. SCALABLE DESKTOP (Screens > 991px) --- */
+      @media only screen and (min-width: 992px) {
+        
+        .front-person-img {
+          width: 40vmin !important;   
+          height: 40vmin !important;  
+          margin-top: 10vmin !important; 
+          margin-bottom: 0 !important;
+          z-index: 10;
+        }
+
+        .front-person-titles {
+          width: 40vmin !important;
+          height: 40vmin !important;
+          margin-top: -40vmin !important;
+        }
+
+        .front-person-titles span {
+          font-size: 2.5vmin !important; 
+          letter-spacing: 1vmin !important;
+        }
+
+        .front-person-links {
+          width: 40vmin !important;
+          height: 40vmin !important;
+          margin-top: -40vmin !important;
+        }
+
+        .front-person-links ul li a {
+          font-size: 2vmin !important; 
+          padding: 2.5vmin 0 !important;
+        }
+
+        .front-heading {
+          margin-top: 15vmin !important; 
+          position: relative;
+          z-index: 50 !important;
+        }
+
+        .front-heading h2 {
+          font-size: 6vmin !important; 
+          letter-spacing: 1.5vmin !important;
+        }
+      }
+
+      /* --- 4. MOBILE / TABLET OVERRIDES (Screens < 992px) --- */
+      @media only screen and (max-width: 991px) {
+        
+        .front-person-img {
+          height: 180px !important;  
+          width: 180px !important;
+          padding: 0 !important;     
+          margin: 20px auto !important; 
+          border-radius: 50%;
+          overflow: hidden;
+          background: none !important;
+          transform: none !important; 
+          position: relative !important;
+          left: auto !important;
+          top: auto !important;
+          display: block !important;
+          z-index: 1;
+        }
+
+        .front-person-img > img {
+          width: 100% !important;
+          height: 100% !important;
+          transform: none !important;
+          position: static !important;
+          margin: 0 !important;
+          border-radius: 50%;
+          object-fit: cover; 
+        }
+
+        .front-person-titles {
+          width: 100% !important;
+          height: auto !important;
+          margin: 0 !important;
+          transform: none !important;
+          text-align: center;
+          position: relative !important;
+          top: auto !important;
+        }
+
+        .front-person-titles span {
+          position: relative !important;
+          display: block;
+          transform: none !important;
+          margin: 5px 0 !important;
+          text-align: center;
+          letter-spacing: 2px;
+          font-size: 16px;
+          left: auto !important;
+          top: auto !important;
+        }
+
+        .front-person-links {
+          width: 100% !important;
+          height: auto !important;
+          margin: 15px 0 0 0 !important;
+          transform: none !important;
+          text-align: center;
+          position: relative !important;
+        }
+
+        .front-person-links ul {
+          position: relative !important;
+          display: block;
+          text-align: center;
+          padding: 0;
+          left: auto !important;
+          top: auto !important;
+          transform: none !important;
+        }
+
+        .front-person-links ul li {
+          display: inline-block;
+          margin: 5px 8px;
+        }
+        
+        .front-person-links ul li a {
+            padding: 5px 0 !important;
+            font-size: 14px !important;
+            display: block;
+        }
+
+        .front-heading {
+          margin-top: 40px !important;
+          position: relative;
+          z-index: 50 !important;
+        }
+        
+        .front-heading h2 {
+            font-size: 32px !important;
+        }
+
+        /* Timeline Fixes */
+        .timeline > li > div { width: 100% !important; padding: 0 15px !important; text-align: left !important; float: none !important; }
+        .timeline > li > .timeline-content, .timeline > li.inverse > .timeline-content { text-align: left !important; float: none !important; }
+        .timeline > li .timeline-desc { margin-bottom: 10px; float: none !important; text-align: left !important; }
+        .timeline:before, .timeline > li:not(.timeline-header):before { display: none; }
+        .timeline > li { margin: 40px 0; border-bottom: 1px solid #eee; padding-bottom: 20px; }
+      }
+    </style>
+
   </head>
 
   <body>
-    <!--=============================================================================
-			Preloader
-		===============================================================================-->
     <div id="preloader">
       <div class="loader">
         <img src="img/load.gif" alt="symp" />
       </div>
     </div>
 
-    <!--=============================================================================
-			Main Wrapper
-		===============================================================================-->
     <div id="wrapper">
-      <!--=============================================================================
-				Front Section
-			===============================================================================-->
       <section class="front-section">
         <div class="container">
           <div class="transition-mask"></div>
 
           <div class="front-person-img">
-            <!--person's image-->
             <img src="img/me1.jpg" alt="Symp" />
-            <!--/person's image-->
-          </div>
+            </div>
 
-          <!--person's titles-->
           <div class="front-person-titles">
-            <!--title1-->
-            <span class="t1">
-              Machine Learning
-            </span>
-            <!--/title1-->
-
-            <!--title2-->
-            <span class="t2">
-              Data Analytics
-            </span>
-            <!--/title2-->
-
-            <!--title3-->
-            <span class="t3">
-              Biotechnology
-            </span>
-            <!--/title3-->
+            <span class="t1">Machine Learning</span>
+            <span class="t2">Reinforcement Learning</span>
+            <span class="t3">Autonomous Systems</span>
           </div>
-          <!--/person's titles-->
 
           <nav class="front-person-links">
-            <!--
-							navigation links, data-section attribute points towards the section with id to be opened. 
-						-->
-
             <ul>
-              <li>
-                <a href="#" data-section="about">About Me</a>
-              </li>
-
-              <li>
-                <a href="#" data-section="resume">Resume</a>
-              </li>
-
-              <li>
-                <a href="#" data-section="publication">Publications</a>
-              </li>
-
-              <li>
-                <a href="#" data-section="blog">My Blog</a>
-              </li>
-
-              <li>
-                <a href="#" data-section="contact">Contact</a>
-              </li>
+              <li><a href="#" data-section="about">About Me</a></li>
+              <li><a href="#" data-section="resume">Resume</a></li>
+              <li><a href="#" data-section="publication">Publications</a></li>
+              <li><a href="#" data-section="blog">My Blog</a></li>
+              <li><a href="#" data-section="contact">Contact</a></li>
             </ul>
           </nav>
 
           <div class="front-heading text-center">
-            <h2>
-              Ashwin Devanga
-            </h2>
+            <h2>Ashwin Devanga</h2>
+            <p style="color: grey;">Last Updated: Jan 2026</p>
           </div>
         </div>
       </section>
-      <!--=============================================================================
-				/Front Section
-			===============================================================================-->
 
-      <!--=============================================================================
-				About Section
-			===============================================================================-->
       <section id="about" class="about-section section">
         <div class="basic-info section-block">
           <div class="container">
             <div class="section-header text-center">
               <h2>About Me</h2>
-
-              <!--divider-->
               <div class="divider-draft center"></div>
-              <!--/divider-->
             </div>
 
             <div class="row">
-              <div class="col-md-4">
+              <div class="col-md-4 col-sm-12">
                 <div class="about-person-img">
-                  <img src="img/me2.jpg" alt="symp" />
+                  <img src="img/me2.jpg" alt="symp" class="img-responsive center-block" />
                 </div>
               </div>
 
-              <div class="col-md-8 about-info">
+              <div class="col-md-8 col-sm-12 about-info">
                   <p>
                   Ashwin Devanga is a Computer Science PhD student at the University of North Dakota, working under the supervision of <a href="https://tingjun-lei.github.io/">Dr. Tingjun Lei</a>.
                   He worked as a Software Engineer in test for  MATLAB Math, Data Analysis and Mathematical Modeling at Mathworks, in Natick, MA until October 2024.
@@ -187,34 +328,31 @@
           </div>
         </div>
 
-        <div
-          class="funfacts-block section-block"
-          data-stellar-background-ratio=".2"
-        >
+        <div class="funfacts-block section-block" data-stellar-background-ratio=".2">
           <div class="container">
             <div class="row">
-              <div class="col-md-3 col-sm-6 funfact">
+              <div class="col-md-3 col-sm-6 col-xs-6 funfact">
                 <div class="content">
-                  <h4>3</h4>
+                  <h4>5</h4>
                   <p>Papers Published</p>
                 </div>
               </div>
 
-              <div class="col-md-3 col-sm-6 funfact">
+              <div class="col-md-3 col-sm-6 col-xs-6 funfact">
                 <div class="content">
-                  <h4>2</h4>
+                  <h4>4</h4>
                   <p>Papers in Progress</p>
                 </div>
               </div>
 
-              <div class="col-md-3 col-sm-6 funfact">
+              <div class="col-md-3 col-sm-6 col-xs-6 funfact">
                 <div class="content">
-                  <h4>5</h4>
+                  <h4>7</h4>
                   <p>Number of Citations</p>
                 </div>
               </div>
 
-              <div class="col-md-3 col-sm-6 funfact">
+              <div class="col-md-3 col-sm-6 col-xs-6 funfact">
                 <div class="content">
                   <h4>2</h4>
                   <p>Years of Professional Experience</p>
@@ -228,14 +366,11 @@
           <div class="container">
             <div class="section-header text-center">
               <h2 class="animate text-over-block">Papers</h2>
-      
-              <!--divider-->
               <div class="divider-draft center"></div>
-              <!--/divider-->
             </div>
       
             <div class="row">
-              <div class="col-md-8 col-md-offset-2">
+              <div class="col-md-8 col-md-offset-2 col-sm-12 col-sm-offset-0">
                 <div class="testimonials-slider">
                   <div class="testimonial">
                     <p>
@@ -243,7 +378,6 @@
                       <br><em>In Proceedings of the 8th International Conference on Pattern Recognition Applications and Methods - Volume 1: ICPRAM</em>,
                       <br>ISBN 978-989-758-351-3, pages 794-801. DOI: 10.5220/0007568407940801
                     </p>
-      
                     <div class="author">
                       <h4>ICPRAM 2019</h4>
                       <p>Yamauchi Labo, Chubu University, Japan</p>
@@ -256,7 +390,6 @@
                       <br><em>In The Proceedings of the 29th Annual Conference of Japanese Neural Network Society.</em>
                       <br>JNNS2019P2-69
                     </p>
-      
                     <div class="author">
                       <h4>JNNS 2019</h4>
                       <p>Yamauchi Labo, Chubu University, Japan</p>
@@ -265,11 +398,10 @@
       
                   <div class="testimonial">
                     <p>
-                      Ashwin Devanga, Emily Diaz Badilla and Mohammad Dehghanimohammadabadi. <br><strong>Using Reinforcement Learning for Decision Making in Industrial Simulation Environments.</strong>  
+                      Ashwin Devanga, Emily Diaz Badilla and Mohammad Dehghanimohammadabadi. <br><strong>Applied Reinforcement Learning for Decision Making in Industrial Simulation Environments.</strong>  
                       <br><em>2022 Winter Simulation Conference (WSC), Singapore, 2022</em>
                       <br>pp. 2819-2829, DOI: 10.1109/WSC57314.2022.10015282.
                     </p>
-      
                     <div class="author">
                       <h4>WSC 2022</h4>
                       <p>Prof. Dehghanimohammadabadi's Lab, Northeastern University</p>
@@ -279,9 +411,9 @@
                   <div class="testimonial">
                     <p>
                       Sahil Belsare, Ashwin Devanga, and Mohammad Dehghanimohammadabadi <br><strong>AI-DRIVEN MULTI-OBJECTIVE UAV ROUTE OPTIMIZATION</strong>
-                      <br><em>Published: Winter Simulation Conference 2024</em>
+                      <br><em>2024 Winter Simulation Conference (WSC), Orlando, FL, USA, 2024</em>
+                      <br> pp. 2619-2630, DOI: 10.1109/WSC63780.2024.10838909
                     </p>
-      
                     <div class="author">
                       <h4>WSC 2024</h4>
                       <p>Prof. Dehghanimohammadabadi's Lab, Northeastern University</p>
@@ -293,10 +425,33 @@
                       Ashwin Devanga and Mohammad Dehghanimohammadabadi <br><strong>DM-Gym: A Reinforcement Learning Python Library for Data Mining Problems</strong>
                       <br><em>Masters Thesis</em>
                     </p>
-      
                     <div class="author">
-                      <h4>TBD</h4>
+                      <h4>Northeastern Libraries 2022</h4>
                       <p>Prof. Dehghanimohammadabadi's Lab, Northeastern University</p>
+                    </div>
+                  </div>
+                  
+                  <div class="testimonial">
+                    <p>
+                      Ashwin Devanga, Tingjun Lei, Jueming Hu, Jun Chen and Chaomin Luo <br><strong>Trustworthy Cyber-Resilient Reinforcement Learning for Secure Navigation under Adversarial Attack</strong>
+                      <br><em>Cyber Awareness and Research Symposium (CARS), Grand Forks, ND, USA, 2025</em>
+                      <br>pp 1-6. DOI: 10.1109/CARS67163.2025.11337781
+                    </p>
+                    <div class="author">
+                      <h4>IEEE CARS 2025</h4>
+                      <p>Prof. Tingjun Lei's Lab, University of North Dakota</p>
+                    </div>
+                  </div>
+
+                  <div class="testimonial">
+                    <p>
+                      Ashwin Devanga, Tingjun Lei, Jueming Hu, Chaomin Luo and Sicong Shao<br><strong>Deep Reinforcement Learning for USV Navigation in Dynamic Ocean Environments</strong>
+                      <br><em>IEEE International Conference on Robotics and Biomimetics (IEEE ROBIO), Chengdu, China, 2025</em>
+                      <br>Published
+                    </p>
+                    <div class="author">
+                      <h4>IEEE ROBIO 2025</h4>
+                      <p>Prof. Tingjun Lei's Lab, University of North Dakota</p>
                     </div>
                   </div>
 
@@ -316,23 +471,14 @@
           </div>
         </div>
       </section>
-      <!--=============================================================================
-				/About Section
-			===============================================================================-->
 
-      <!--=============================================================================
-				Resume Section
-			===============================================================================-->
       <section id="resume" class="resume-section section">
         <div class="container">
           <div class="row">
-            <div class="col-md-6 col-md-offset-3">
+            <div class="col-md-6 col-md-offset-3 col-sm-12 col-sm-offset-0">
               <div class="section-header text-center">
                 <h2 class="animate text-over-block">My Resume</h2>
-
-                <!--divider-->
                 <div class="divider-draft center"></div>
-                <!--/divider-->
               </div>
             </div>
           </div>
@@ -349,14 +495,14 @@
                 <div class="timeline-desc">
                   <h4>2025-Present</h4>
                 </div>
-
                 <div class="timeline-content">
                   <h4>PhD</h4>
                   <span>University of North Dakota, Grand Forks</span>
-
                   <p>
                     PhD in Computer Science,
-                    Under Dr. Tingjun Lei, At University of North Dakota (UND)
+                    Under Dr. Tingjun Lei,
+                    from the School of Electrical Engineering and Computer Science (SEECS), College of Engineering and Mines,
+                    University of North Dakota (UND).
                   </p>
                 </div>
               </li>
@@ -365,11 +511,9 @@
                 <div class="timeline-desc">
                   <h4>2020-2022</h4>
                 </div>
-
                 <div class="timeline-content">
                   <h4>Masters Degree</h4>
                   <span>Northeastern University, Boston</span>
-
                   <p>
                     Master of Science (MS) in Data Analytics Engineering (DAE),
                     from the department of Mechanical and Industrial Engineering (MIE), College of Engineering(COE),
@@ -382,11 +526,9 @@
                 <div class="timeline-desc">
                   <h4>2016-2020</h4>
                 </div>
-
                 <div class="timeline-content">
                   <h4>Bachelors Degree</h4>
                   <span>Indian Institute of Technology Guwahati, Guwahati</span>
-
                   <p>
                     Bachelors (B.Tech) in Biotechnology,
                     from the department of Biosciences and Bioengineering(BSBE),
@@ -394,8 +536,6 @@
                   </p>
                 </div>
               </li>
-
-              
 
               <li class="timeline-header">
                 <h4>Experience</h4>
@@ -405,14 +545,12 @@
                 <div class="timeline-desc">
                   <h4>2025-Present</h4>
                 </div>
-
                 <div class="timeline-content">
                   <h4>Graduate Teaching Assistant</h4>
                   <span>University of North Dakota</span>
-
                   <p>
                     I am a part-time teaching assistant for undergraduate computer science courses at UND.
-                    I am a TA for Secure Software Engineering and Object Oriented Programming.
+                    I am a TA for Secure Software Engineering, Object Oriented Programming and Digital Circuits Laboratory.
                   </p>
                 </div>
               </li>
@@ -421,14 +559,12 @@
                 <div class="timeline-desc">
                   <h4>2022-2024</h4>
                 </div>
-
                 <div class="timeline-content">
-                  <h4>Software Engineer in Test: MATLAB Math, Data Analysis and SciML</h4>
+                  <h4>Software Engineer in Test</h4>
                   <span>Mathworks</span>
-
                   <p>
-                    I work in Quality Engineering supporting the core math and data analysis teams by prototyping functions,
-                     designing and writing tests, and fixing any bugs found in these areas.
+                    Worked in Quality Engineering supporting the core math and data analysis teams by prototyping functions,
+                    designing and writing tests, and fixing any bugs found in these areas.
                   </p>
                 </div>
               </li>
@@ -437,15 +573,12 @@
                 <div class="timeline-desc">
                   <h4>2021-2022</h4>
                 </div>
-
                 <div class="timeline-content">
                   <h4>Research Assistant</h4>
                   <span>Northeastern University</span>
-
                   <p>
                     Worked on using Reinforcement Learning (RL) to solve optimisation problems in industry.
                     Operations Rsearch (OR) problems such as Vehicle Routing Problem (VRP) and Job Scheduling were the major problem statements.
-                    We also worked on Data Mining Problems and showcasing RL as a universal problem solver.
                   </p>
                 </div>
               </li>
@@ -454,11 +587,9 @@
                 <div class="timeline-desc">
                   <h4>2021-2022</h4>
                 </div>
-
                 <div class="timeline-content">
                   <h4>Teaching Assistant</h4>
                   <span>Northeastern University</span>
-
                   <p>
                     Reinforcement Learning: 4 Semesters<br>
                     MetaHeuristics and Applications: 4 Semesters<br>
@@ -471,11 +602,9 @@
                 <div class="timeline-desc">
                   <h4>2018 and 2019</h4>
                 </div>
-
                 <div class="timeline-content">
                   <h4>Research Assistant</h4>
                   <span>Chubu University, Japan</span>
-
                   <p>
                     Worked on Research Projects related to Reinforcement Learning (RL) algorithms and their optimisation for one-shot learning.
                   </p>
@@ -490,68 +619,43 @@
           <div class="container">
             <div class="section-header text-center">
               <h2 class="animate text-over-block">My Hobbies</h2>
-              <!--divider-->
               <div class="divider-draft center"></div>
-              <!--/divider-->
             </div>
 
             <div class="row">
               <div class="col-md-2 col-sm-4 col-xs-6">
                 <div class="hobby">
-                  <div class="icon">
-                    <i class="ion-paper-airplane"></i>
-                  </div>
-
+                  <div class="icon"><i class="ion-paper-airplane"></i></div>
                   <h4>Travelling</h4>
                 </div>
               </div>
-
               <div class="col-md-2 col-sm-4 col-xs-6">
                 <div class="hobby">
-                  <div class="icon">
-                    <i class="ion-ios-snowy"></i>
-                  </div>
-
+                  <div class="icon"><i class="ion-ios-snowy"></i></div>
                   <h4>Snowboarding</h4>
                 </div>
               </div>
-
               <div class="col-md-2 col-sm-4 col-xs-6">
                 <div class="hobby">
-                  <div class="icon">
-                    <i class="ion-monitor"></i>
-                  </div>
-
+                  <div class="icon"><i class="ion-monitor"></i></div>
                   <h4>Coding</h4>
                 </div>
               </div>
-
               <div class="col-md-2 col-sm-4 col-xs-6">
                 <div class="hobby">
-                  <div class="icon">
-                    <i class="ion-ios-musical-notes"></i>
-                  </div>
-
+                  <div class="icon"><i class="ion-ios-musical-notes"></i></div>
                   <h4>Music</h4>
                 </div>
               </div>
-
               <div class="col-md-2 col-sm-4 col-xs-6">
                 <div class="hobby">
-                  <div class="icon">
-                    <i class="ion-arrow-graph-up-right"></i>
-                  </div>
-
+                  <div class="icon"><i class="ion-arrow-graph-up-right"></i></div>
                   <h4>Hiking</h4>
                 </div>
               </div>
-
               <div class="col-md-2 col-sm-4 col-xs-6">
                 <div class="hobby">
-                  <div class="icon">
-                    <i class="ion-waterdrop"></i>
-                  </div>
-
+                  <div class="icon"><i class="ion-waterdrop"></i></div>
                   <h4>Kitesurfing</h4>
                 </div>
               </div>
@@ -563,97 +667,61 @@
           <div class="container">
             <div class="section-header text-center">
               <h2 class="animate text-over-block">My Skills</h2>
-
-              <!--divider-->
               <div class="divider-draft center"></div>
-              <!--/divider-->
             </div>
-
             <div class="row">
               <div class="col-md-6">
                 <div class="skill">
                   <h4>Python</h4>
-
                   <div class="skill-bar" data-percent="100">
-                    <div class="bar">
-                      <div class="percent">100%</div>
-                    </div>
+                    <div class="bar"><div class="percent">100%</div></div>
                   </div>
                 </div>
-
                 <div class="skill">
                   <h4>R</h4>
-
                   <div class="skill-bar" data-percent="75">
-                    <div class="bar">
-                      <div class="percent">75%</div>
-                    </div>
+                    <div class="bar"><div class="percent">75%</div></div>
                   </div>
                 </div>
-
                 <div class="skill">
                   <h4>MATLAB</h4>
-
                   <div class="skill-bar" data-percent="100">
-                    <div class="bar">
-                      <div class="percent">100%</div>
-                    </div>
+                    <div class="bar"><div class="percent">100%</div></div>
                   </div>
                 </div>
-
                 <div class="skill">
                   <h4>WebDev Tools</h4>
-
                   <div class="skill-bar" data-percent="70">
-                    <div class="bar">
-                      <div class="percent">70%</div>
-                    </div>
+                    <div class="bar"><div class="percent">70%</div></div>
                   </div>
                 </div>
-
               </div>
 
               <div class="col-md-6">
                 <div class="skill">
                   <h4>Tableau</h4>
-
                   <div class="skill-bar" data-percent="70">
-                    <div class="bar">
-                      <div class="percent">70%</div>
-                    </div>
+                    <div class="bar"><div class="percent">70%</div></div>
                   </div>
                 </div>
-
                 <div class="skill">
                   <h4>C</h4>
-
                   <div class="skill-bar" data-percent="75">
-                    <div class="bar">
-                      <div class="percent">75%</div>
-                    </div>
+                    <div class="bar"><div class="percent">85%</div></div>
                   </div>
                 </div>
-
                 <div class="skill">
                   <h4>Java</h4>
-
                   <div class="skill-bar" data-percent="75">
-                    <div class="bar">
-                      <div class="percent">75%</div>
-                    </div>
+                    <div class="bar"><div class="percent">75%</div></div>
                   </div>
                 </div>
-
                 <div class="skill">
                   <h4>SQL</h4>
-
                   <div class="skill-bar" data-percent="75">
-                    <div class="bar">
-                      <div class="percent">75%</div>
-                    </div>
+                    <div class="bar"><div class="percent">70%</div></div>
                   </div>
                 </div>
-
               </div>
             </div>
             <a href="./Files/FullResume_Ashwin.pdf" class="symp-btn link-btn">
@@ -662,7 +730,6 @@
               <i class="ion-ios-download"></i>Download a short version of my resume here</a>
           </div>
         </div>
-
         <div class="footer bg-lightgray section-block">
           <div class="container">
             <div class="row">
@@ -673,25 +740,15 @@
           </div>
         </div>
       </section>
-      <!--=============================================================================
-				/Resume Section
-			===============================================================================-->
 
-      <!--=============================================================================
-				Publications Section
-			===============================================================================-->
       <section id="publication" class="portfolio-section section">
         <div class="portfolio-block section-block">
           <div class="container">
             <div class="row">
-              <div class="col-md-6 col-md-offset-3">
+              <div class="col-md-6 col-md-offset-3 col-sm-12 col-sm-offset-0">
                 <div class="section-header text-center">
                   <h2 class="animate text-over-block">Projects and Publications</h2>
-
-                  <!--divider-->
                   <div class="divider-draft center"></div>
-                  <!--/divider-->
-
                   <p>
                     Papers published, Posters presented and Talks given by me at Conferences and Journals till date.
                     My <a href="https://scholar.google.com/citations?user=3S4JkAoAAAAJ&hl=en">Google Scholar Page</a>
@@ -702,66 +759,67 @@
 
             <div id="portfolio-filters">
               <ul>
-                <li>
-                  <a href="#" data-group="all" class="active">All</a>
-                </li>
-                <li>
-                  <a href="#" data-group="Conferences">Conferences</a>
-                </li>
-                <li>
-                  <a href="#" data-group="Journals">Journals</a>
-                </li>
-                
-                <li>
-                  <a href="#" data-group="Posters">Posters</a>
-                </li>
-                
-                <li>
-                  <a href="#" data-group="Talks">Talks</a>
-                </li>
-                
-                <li>
-                  <a href="#" data-group="Papers">Papers</a>
-                </li>
-
+                <li><a href="#" data-group="all" class="active">All</a></li>
+                <li><a href="#" data-group="Conferences">Conferences</a></li>
+                <li><a href="#" data-group="Journals">Journals</a></li>
+                <li><a href="#" data-group="Posters">Posters</a></li>
+                <li><a href="#" data-group="Talks">Talks</a></li>
+                <li><a href="#" data-group="Papers">Papers</a></li>
+                <li><a href="#" data-group="Thesis">Thesis</a></li>
               </ul>
             </div>
 
             <div id="portfolio-grid" class="portfolio-items">
-              <div class="item" data-groups='["all", "Conferences", "Papers"]'>
+              <div class="item" data-groups='["all", "Conferences", "Papers", "Talks"]'>
                 <div class="inner">
-                  <img alt="symp" src="img/portfolio/WSC2024.jpg" />
-
+                  <img alt="symp" src="img/portfolio/ROBIO2025.jpg" />
                   <div class="caption">
                     <div class="caption-inner">
-                      <h4>AI-Driven Multi-Objective UAV Route
-                        Optimization</h4>
+                      <h4>Deep Reinforcement Learning for USV Navigation in Dynamic Ocean Environments</h4>
                       <ul class="links">
-                        <li>
-                          <a href="#">
-                            <i class="ion-ios-plus-empty"></i>
-                          </a>
-                        </li>
+                        <li><a href="#"><i class="ion-ios-plus-empty"></i></a></li>
                       </ul>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div class="item" data-groups='["all", "Conferences", "Talks"]'>
+              <div class="item" data-groups='["all", "Conferences", "Papers", "Talks"]'>
+                <div class="inner">
+                  <img alt="symp" src="img/portfolio/IEEECARS2025.jpg" />
+                  <div class="caption">
+                    <div class="caption-inner">
+                      <h4>Trustworthy Cyber-Resilient Reinforcement Learning for Secure Navigation under Adversarial Attack</h4>
+                      <ul class="links">
+                        <li><a href="https://ieeexplore.ieee.org/document/11337781"><i class="ion-ios-plus-empty"></i></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item" data-groups='["all", "Conferences", "Papers"]'>
+                <div class="inner">
+                  <img alt="symp" src="img/portfolio/WSC2024.jpg" />
+                  <div class="caption">
+                    <div class="caption-inner">
+                      <h4>AI-Driven Multi-Objective UAV Route Optimization</h4>
+                      <ul class="links">
+                        <li><a href="https://ieeexplore.ieee.org/document/10838909"><i class="ion-ios-plus-empty"></i></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item" data-groups='["all", "Thesis"]'>
                 <div class="inner">
                   <img alt="symp" src="img/portfolio/openaigym.jpg" />
-
                   <div class="caption">
                     <div class="caption-inner">
                       <h4>DM-Gym</h4>
-
                       <ul class="links">
-                        <li>
-                          <a href="./Files/Masters_Thesis_DM_Gym_without_Signature_page.pdf">
-                            <i class="ion-ios-plus-empty"></i>
-                          </a>
-                        </li>
+                        <li><a href="./Files/Masters_Thesis_DM_Gym_without_Signature_page.pdf"><i class="ion-ios-plus-empty"></i></a></li>
                       </ul>
                     </div>
                   </div>
@@ -771,17 +829,11 @@
               <div class="item" data-groups='["all", "Conferences", "Papers", "Talks"]'>
                 <div class="inner">
                   <img alt="symp" src="img/portfolio/job_scheduling.jpg" />
-
                   <div class="caption">
                     <div class="caption-inner">
-                      <h4>Industrial Job Scheduling</h4>
-
+                      <h4>Applied Reinforcement Learning for Decision Making in Industrial Simulation Environments</h4>
                       <ul class="links">
-                        <li>
-                          <a href="http://simulation.su/uploads/files/default/2022-devanga-badilla-dehghanimohammadabadi.pdf">
-                            <i class="ion-ios-plus-empty"></i>
-                          </a>
-                        </li>
+                        <li><a href="https://ieeexplore.ieee.org/document/10015282"><i class="ion-ios-plus-empty"></i></a></li>
                       </ul>
                     </div>
                   </div>
@@ -791,24 +843,16 @@
               <div class="item" data-groups='["all", "Conferences", "Papers", "Posters"]'>
                 <div class="inner">
                   <img alt="symp" src="img/portfolio/one_shot_learning.jpg" />
-
                   <div class="caption">
                     <div class="caption-inner">
-                      <h4>One Shot Learning</h4>
-
+                      <h4>Collaborative Learning of Human and Computer: Supervised Actor-Critic based Collaboration Scheme</h4>
                       <ul class="links">
-                        <li>
-                          <a href="https://www.scitepress.org/PublishedPapers/2019/75684/75684.pdf">
-                            <i class="ion-ios-plus-empty"></i>
-                          </a>
-                        </li>
+                        <li><a href="https://www.scitepress.org/PublishedPapers/2019/75684/75684.pdf"><i class="ion-ios-plus-empty"></i></a></li>
                       </ul>
                     </div>
                   </div>
                 </div>
               </div>
-
-
             </div>
           </div>
         </div>
@@ -823,24 +867,14 @@
           </div>
         </div>
       </section>
-      <!--=============================================================================
-				/Publications Section
-			===============================================================================-->
 
-      <!--=============================================================================
-				Blog Section
-			===============================================================================-->
       <section id="blog" class="blog-section section">
         <div class="container">
           <div class="row">
-            <div class="col-md-6 col-md-offset-3">
+            <div class="col-md-6 col-md-offset-3 col-sm-12 col-sm-offset-0">
               <div class="section-header text-center">
                 <h2>My Blog</h2>
-
-                <!--divider-->
                 <div class="divider-draft center"></div>
-                <!--/divider-->
-
                 <p>
                   This is my blog where my thoughts live. Check it out here at <a href="http://blog.ashwindevanga.com">blog.ashwindevanga.com</a>
                   <br><br><br><br><br><br><br><br>
@@ -860,23 +894,15 @@
           </div>
         </div>
       </section>
-      <!--=============================================================================
-				/Blog Section
-			===============================================================================-->
 
-      <!--=============================================================================
-				Contact Section
-			===============================================================================-->
       <section id="contact" class="contact-section section">
         <div class="contact-block section-block">
           <div class="container">
             <div class="row">
-              <div class="col-md-6 col-md-offset-3">
+              <div class="col-md-6 col-md-offset-3 col-sm-12 col-sm-offset-0">
                 <div class="section-header text-center">
                   <h2 class="animate text-over-block">Contact Me</h2>
-                  <!--divider-->
                   <div class="divider-draft center"></div>
-                  <!--/divider-->
                   <p>
                     If you need any help, have any available oportunities
                     or just want to say hi, feel free to shoot me a message.
@@ -888,39 +914,19 @@
             </div>
 
             <div class="row">
-              <div class="col-md-8 col-md-offset-2">
-                <form
-                  id="contact-form"
-                  class="contact-form"
-                  action="mail.php"
-                  method="post"
-                  data-toggle="validator"
-                >
+              <div class="col-md-8 col-md-offset-2 col-sm-12 col-sm-offset-0">
+                <form id="contact-form" class="contact-form" action="mail.php" method="post" data-toggle="validator">
                   <div id="contact-form-result"></div>
-
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder="Name"
-                          required
-                        />
-
+                        <input type="text" class="form-control" placeholder="Name" required />
                         <div class="help-block with-errors"></div>
                       </div>
                     </div>
-
                     <div class="col-md-6">
                       <div class="form-group">
-                        <input
-                          type="email"
-                          class="form-control"
-                          placeholder="Email"
-                          required
-                        />
-
+                        <input type="email" class="form-control" placeholder="Email" required />
                         <div class="help-block with-errors"></div>
                       </div>
                     </div>
@@ -929,36 +935,20 @@
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder="Phone"
-                          required
-                        />
+                        <input type="text" class="form-control" placeholder="Phone" required />
                         <div class="help-block with-errors"></div>
                       </div>
                     </div>
-
                     <div class="col-md-6">
                       <div class="form-group">
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder="Website"
-                          required
-                        />
+                        <input type="text" class="form-control" placeholder="Website" required />
                         <div class="help-block with-errors"></div>
                       </div>
                     </div>
                   </div>
 
                   <div class="form-group">
-                    <textarea
-                      rows="5"
-                      class="form-control"
-                      placeholder="Message"
-                      required
-                    ></textarea>
+                    <textarea rows="5" class="form-control" placeholder="Message" required></textarea>
                     <div class="help-block with-errors"></div>
                   </div>
 
@@ -981,24 +971,12 @@
           </div>
         </div>
       </section>
-      <!--=============================================================================
-				/Contact Section
-			===============================================================================-->
 
-      <!--close button-->
       <div class="close-btn">
         <span></span>
         <span></span>
       </div>
-      <!--/close button-->
     </div>
-    <!--=============================================================================
-			/Main Wrapper
-		===============================================================================-->
-
-    <!--=============================================================================
-			JavaScript Files
-		===============================================================================-->
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.stellar.min.js"></script>
     <script src="js/modernizr.js"></script>
