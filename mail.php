@@ -29,7 +29,7 @@
 		
 		
 		//Place your Email Here
-		$recipient = "ashwindevanga@live.com";
+		$recipient = "ashwinmdevanga@gmail.com";
 		
 		$mailheader = "From: $email \r\n";
 		
